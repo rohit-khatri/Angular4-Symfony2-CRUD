@@ -1,0 +1,28 @@
+
+<input type="text" (keyup)="onNameKeyUp($event)">
+<button (click)="getData()">Get Data</button>
+<br>
+<br>
+<button (click)="postData()">Post Data</button>
+
+<table border="1" ng-if="found">
+  <th>Activity Option</th>
+  <th>Activity Name</th>
+  <th>Activity Provider</th>
+  <th>Activity Date</th>
+  <th>Activity Quantity</th>
+  <th>Ceus Earned</th>
+  <th>Action</th>
+
+  <tr *ngFor="let acitivity of certificationTypes">
+    <td>{{acitivity.activity_name}}</td>
+    <td>{{acitivity.activity_name}}</td>
+    <td>{{acitivity.provider_name}}</td>
+    <td>{{acitivity.created_date}}</td>
+    <td>{{acitivity.activity_quantity}}</td>
+    <td>{{acitivity.ceus_earned}}</td>
+    <td>
+      <button (click)='deleteCeus(acitivity.ceu_id)'>Delete</button>
+    </td>
+  </tr>
+</table>
